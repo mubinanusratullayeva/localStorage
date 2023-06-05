@@ -3,6 +3,7 @@ const body = document.querySelector('body')
       modeBtn = document.querySelector('.ModeBtn')
       toDoBtn = document.querySelector('.toDoBtn')
       elUl = document.querySelector('.wrapper')
+      clearBtn = document.querySelector('.clearBtn')
 
 
 let themeStatus = localStorage.getItem('theme')
@@ -39,6 +40,15 @@ toDoBtn.addEventListener('click', ()=> {
         let elLi = document.createElement('li');
         elLi.textContent = valueIn;
         let delBtn = document.createElement('button');
+
+        let smth = localStorage.getItem('smth')
+
+        if(smth){
+              elLi.textContent = valueIn
+        }
+
+      localStorage.setItem('smth', valueIn)
+
         delBtn.textContent = 'Delete';
         delBtn.classList.add('delBtn');
     
@@ -48,8 +58,13 @@ toDoBtn.addEventListener('click', ()=> {
     
         elLi.append(delBtn);
         params.append(elLi);
+
       }
       name(elUl);
     
       elInput.value = '';
     });
+
+    clearBtn.addEventListener('click', ()=>{
+      localStorage.removeItem('smth')
+    })
