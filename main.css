@@ -19,3 +19,23 @@ body.dark{
 .delBtn:active{
     background-color: rgb(255, 36, 36);
 }
+
+.users{
+    width: 600px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.card{
+    list-style: none;
+    padding: 40px 20px;
+    background-color: antiquewhite;
+    display: inline-block;
+}
+
+.modal-body{
+    background-color:antiquewhite;
+}

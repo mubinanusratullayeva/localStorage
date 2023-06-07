@@ -6,18 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./main.css">
 </head>
 
 <body>
+    <!-- LOCALSTORAGE -->
 
-    <button class="ModeBtn">Mode</button>
+    <!-- <button class="ModeBtn">Mode</button>
 
     <input class="toDoInput" type="text">
     <button class="toDoBtn">+</button>
     <button class="clearBtn">Clear All</button>
-    <ul class="wrapper"></ul>
+    <ul class="wrapper"></ul> -->
 
+
+    <!-- JSONPLACEHOLDER -->
+
+    <ul class="users"></ul>
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">User Information</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first
+        modal</button> -->
+    <script src="./bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>
 
