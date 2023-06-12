@@ -170,15 +170,6 @@ ulLi.addEventListener('click', (t) => {
      }
 })
 
-// div.addEventListener('click', (t) => {
-//     let lableTarget = t.target
-
-//     if(lableTarget.tagName == 'INPUT'){
-//         ontoSpan.textContent = blockOfInput.dataset.product
-//     }
-
-// })
-
 div.addEventListener('click', (t) => {
     let lableTarget = t.target;
   
