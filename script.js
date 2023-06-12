@@ -103,40 +103,83 @@
 
 //8-HOMEWORK
 
-window.addEventListener('DOMContentLoaded', () => {
-    let token = localStorage.getItem('token')
+// window.addEventListener('DOMContentLoaded', () => {
+//     let token = localStorage.getItem('token')
 
-    if(token){
-        window.location.href = 'file:///C:/Users/Mubina/Desktop/MIT%20homework/4__4%20month/6%20homework/home.html'
-    }
+//     if(token){
+//         window.location.href = 'file:///C:/Users/Mubina/Desktop/MIT%20homework/4__4%20month/6%20homework/home.html'
+//     }
+// })
+
+
+// let elForm = document.querySelector('.elForm')
+// let elinp = document.querySelector('.elForm__inp')
+// let elPassW = document.querySelector('.elForm__pass')
+
+// elForm.addEventListener('submit', (a) =>{
+//     a.preventDefault();
+
+//     fetch('https://reqres.in/api/login', {
+//         method: 'POST',
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             email: elinp.value,
+//             password: elPassW.value,
+//         })
+//     })
+//     .then(res => res.json())
+//     .then((data => {
+//         if (data.token) {
+//             localStorage.setItem('token', JSON.stringify(data.token))
+//             window.location.href = 'file:///C:/Users/Mubina/Desktop/MIT%20homework/4__4%20month/6%20homework/home.html'
+//         }
+//         if(data.error){
+//             alert(data.error)
+//         }
+//     })).catch(err => alert(err))
+// })
+
+
+// HOMEWORK-8.2
+
+let orSelect = document.querySelector('.or')
+let non = document.querySelector('.non')
+let ulLi = document.querySelector('.UlBox')
+let roundli = document.querySelectorAll('.dumaloq')
+let kattaText = document.querySelector('.kattaligi')
+let CheckBox = document.querySelector('#checkIn');
+let blockOfInput = document.querySelectorAll('.blockOfInput');
+let ontoSpan = document.querySelector('.onto');
+let sendBtn = document.querySelector('.send')
+let div = document.querySelector('.div')
+
+orSelect.addEventListener('change', (e) =>{
+    e.preventDefault();
+  
+    non.textContent = orSelect.value
+
 })
 
+ulLi.addEventListener('click', (t) => {
+     let targetChild = t.target
 
-let elForm = document.querySelector('.elForm')
-let elinp = document.querySelector('.elForm__inp')
-let elPassW = document.querySelector('.elForm__pass')
+     if (targetChild.tagName == 'LI') {
+        kattaText.textContent = targetChild.dataset.height
+     }
+})
 
-elForm.addEventListener('submit', (a) =>{
-    a.preventDefault();
+div.addEventListener('click', (t) => {
+    let lableTarget = t.target;
+  
+    if (lableTarget.tagName == 'INPUT') {
+      let checkedInputs = Array.from(blockOfInput).filter(input => input.querySelector('input').checked);
+      let products = checkedInputs.map(input => input.dataset.product);
+      ontoSpan.textContent = products.join(', ');
+    }
+  });
 
-    fetch('https://reqres.in/api/login', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            email: elinp.value,
-            password: elPassW.value,
-        })
-    })
-    .then(res => res.json())
-    .then((data => {
-        if (data.token) {
-            localStorage.setItem('token', JSON.stringify(data.token))
-            window.location.href = 'file:///C:/Users/Mubina/Desktop/MIT%20homework/4__4%20month/6%20homework/home.html'
-        }
-        if(data.error){
-            alert(data.error)
-        }
-    })).catch(err => alert(err))
+sendBtn.addEventListener('click', () => {
+        sendBtn.classList.add('btn')
 })

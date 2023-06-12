@@ -42,7 +42,7 @@
 
 
     <!-- 8-HOMEWORK -->
-    <form class="elForm">
+    <!-- <form class="elForm">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="elForm__inp form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -53,9 +53,103 @@
             <input type="password" class="elForm__pass form-control" id="exampleInputPassword1">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </form> -->
+
+    <!-- HOMEWORK-8.2 -->
+
+    <h1 style="text-align: center;">Pitsa buyurtma qilish</h1>
+    <div class="container">
+        <div class="flexDiv">
+            <div class="choosingBox">
+                <h3>Noni anday bo'lsin?</h3>
+                <select class="or" value="">
+                    <option disabled selected>choose width</option>
+                    <option value="yupqa">yupqa</option>
+                    <option value="qalin">qalin</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3>Kattaligi</h3>
+                <ul class="UlBox">
+                    <li data-height="25sm" class="dumaloq">25sm</li>
+                    <li data-height="30sm" class="dumaloq">30sm</li>
+                    <li data-height="35sm" class="dumaloq">35sm</li>
+                </ul>
+                <h3>Ustiga nima solaylik?</h3>
+                <div class="div">
+                    <label data-product="Pomidor" class="blockOfInput">
+                        <input type="checkbox" id="checkIn">
+                        Pomidor
+                    </label>
+                    <label data-product="Kurka go'shti" class="blockOfInput">
+                        <input type="checkbox" id="checkIn">
+                        Kurka go'shti
+                    </label>
+                    <label data-product="Zaytun" class="blockOfInput">
+                        <input type="checkbox" id="checkIn">
+                        Zaytun
+                    </label>
+                    <label data-product="Tuzlangan bodring" class="blockOfInput">
+                        <input type="checkbox" id="checkIn">
+                        Tuzlangan bodring
+                    </label>
+                    <label data-product="Qo'ziqorin" class="blockOfInput">
+                        <input type="checkbox" id="checkIn">
+                        Qo'ziqorin
+                    </label>
+                    <label data-product="Qazi" class="blockOfInput">
+                        <input type="checkbox" id="checkIn">
+                        Qazi
+                    </label>
+                </div>
+                <h3>Qo'shimchalar</h3>
+                <div class="dizSecond">
+                    <label data-product="Achchiq">
+                        <input type="checkbox" id="smth">
+                        Achchiq
+                    </label>
+                    <label data-product="Sasiskali">
+                        <input type="checkbox" id="smth">
+                        Sasiskali
+                    </label>
+                </div>
+            </div>
+            <div class="selectedBox">
+                <p><strong>Non: </strong><span class="non"></span></p>
+                <p><strong>Kattaligi: </strong><span class="kattaligi"></span></p>
+                <p><strong>Ustida: </strong><span class="onto"></span></p>
+                <p><strong>Qo'shimcha: </strong><span class="qo'simcha"></span></p>
 
 
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Buyurtma berish
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Pitsa</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                buyurtmangiz qabul qilindi
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="send btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
