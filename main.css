@@ -44,3 +44,43 @@ body.dark{
     padding: 50px;
     background-color: cadetblue;
 }
+
+.flexDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.UlBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.dumaloq{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.blockOfInput{
+    display: block;
+}
+
+.send{
+    background-color:rgb(247, 101, 101);
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer
+}
+
+.send:hover{
+    background-color: red;
+}
