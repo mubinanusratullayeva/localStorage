@@ -74,27 +74,69 @@
 
 
 
-//JSONPLACEHOLDER
+// //JSONPLACEHOLDER
 
 
-fetch('https://jsonplaceholder.typicode.com/users')
-.then(res => res.json())
-.then((data)=> {
-    // console.log(data);
-    data.forEach(item => {
-    let usersUl = document.querySelector('.users')
-    let text = document.querySelector('.text')
-    text.innerHTML = `name: ${item.name}<br>
-    username: ${item.username}<br>
-    email: ${item.email}`
-        let liEl = document.createElement('li')
-        liEl.classList.add('card')
-        liEl.innerHTML = `name: ${item.name}<br>
-        username: ${item.username}<br>
-        email: ${item.email}`
-        liEl.classList.add('btn')
-        liEl.setAttribute('data-bs-target', '#exampleModalToggle')
-        liEl.setAttribute('data-bs-toggle', 'modal')
-        usersUl.append(liEl)
-    });
-}).catch(err => console.error(err))
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then(res => res.json())
+// .then((data)=> {
+//     // console.log(data);
+//     data.forEach(item => {
+//     let usersUl = document.querySelector('.users')
+//     let text = document.querySelector('.text')
+//     text.innerHTML = `name: ${item.name}<br>
+//     username: ${item.username}<br>
+//     email: ${item.email}`
+//         let liEl = document.createElement('li')
+//         liEl.classList.add('card')
+//         liEl.innerHTML = `name: ${item.name}<br>
+//         username: ${item.username}<br>
+//         email: ${item.email}`
+//         liEl.classList.add('btn')
+//         liEl.setAttribute('data-bs-target', '#exampleModalToggle')
+//         liEl.setAttribute('data-bs-toggle', 'modal')
+//         usersUl.append(liEl)
+//     });
+// }).catch(err => console.error(err))
+
+
+
+//8-HOMEWORK
+
+window.addEventListener('DOMContentLoaded', () => {
+    let token = localStorage.getItem('token')
+
+    if(token){
+        window.location.href = 'file:///C:/Users/Mubina/Desktop/MIT%20homework/4__4%20month/6%20homework/home.html'
+    }
+})
+
+
+let elForm = document.querySelector('.elForm')
+let elinp = document.querySelector('.elForm__inp')
+let elPassW = document.querySelector('.elForm__pass')
+
+elForm.addEventListener('submit', (a) =>{
+    a.preventDefault();
+
+    fetch('https://reqres.in/api/login', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: elinp.value,
+            password: elPassW.value,
+        })
+    })
+    .then(res => res.json())
+    .then((data => {
+        if (data.token) {
+            localStorage.setItem('token', JSON.stringify(data.token))
+            window.location.href = 'file:///C:/Users/Mubina/Desktop/MIT%20homework/4__4%20month/6%20homework/home.html'
+        }
+        if(data.error){
+            alert(data.error)
+        }
+    })).catch(err => alert(err))
+})

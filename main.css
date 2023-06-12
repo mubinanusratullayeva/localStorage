@@ -39,3 +39,8 @@ body.dark{
 .modal-body{
     background-color:antiquewhite;
 }
+
+.elForm{
+    padding: 50px;
+    background-color: cadetblue;
+}
